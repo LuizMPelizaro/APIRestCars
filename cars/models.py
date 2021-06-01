@@ -7,7 +7,7 @@ class Car(models.Model):
     manufacturingDate = models.DateTimeField()
 
     def __str__(self):
-        self.carModel
+        return self.carModel
 
 
 class CarSpecifications(models.Model):
@@ -17,9 +17,9 @@ class CarSpecifications(models.Model):
         ('G', 'GT')
     )
     typeCar = models.CharField(max_length=20)
-    typeEngine = models.CharField(max_length=50)
-    description = models.CharField(max_length=100)
+    typeEngine = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
     category = models.CharField(max_length=1, choices=CATEGORY, blank=False, null=False, default='F')
 
     def __str__(self):
-        self.description
+        return self.description

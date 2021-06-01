@@ -1,11 +1,15 @@
-from django.http import JsonResponse
+from rest_framework import viewsets
+from cars.models import Car, CarSpecifications
+from cars.serializer import CarSerializer, CarSpecificationsSerializers
 
 
-def cars(request):
-    if request.method == 'GET':
-        car = {
-            'model': 'A8',
-            'car_year': '2020',
-            'car_brand': 'Audi'
-        }
-        return JsonResponse(car)
+class CarsViewSets(viewsets.ModelViewSet):
+    """Show all cars"""
+    queryset = Car.objects.all()
+    serializer_class = CarSerializer
+
+
+class CarsSpecificationsViewSets(viewsets.ModelViewSet):
+    """Show all specification of cars"""
+    queryset = CarSpecifications.objects.all()
+    serializer_class = CarSpecificationsSerializers
