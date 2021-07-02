@@ -4,3 +4,7 @@ __pycache__/
 *.py[cod]
 *.log
 *.pot
+db.sqlite3
+migrations
+/venv
+venv/
